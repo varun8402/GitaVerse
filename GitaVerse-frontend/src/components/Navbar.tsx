@@ -1,7 +1,7 @@
 const Navbar = ()=>{
     return (
        <>
-  <div className="flex justify-between items-center p-4 z-50 w-full absolute text-black ">
+  <div className="flex justify-between items-center p-4 z-50 w-full absolute text-white ">
     {/* Left Logo */}
     <div className="flex items-center gap-2">
       <img

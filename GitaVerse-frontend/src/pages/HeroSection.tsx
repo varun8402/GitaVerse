@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { ThreeDMarqueeDemo } from '../components/3dgrid';
 import gsap from 'gsap';;
 import {useGSAP} from "@gsap/react";
 interface HeroSectionProps {
