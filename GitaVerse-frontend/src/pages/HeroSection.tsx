@@ -16,6 +16,8 @@ import {
   IconArrowRight,
 } from '@tabler/icons-react';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+
 const LIGHT_BG = "https://res.cloudinary.com/dwdsw96fy/image/upload/v1756488860/fd99f5c4-af20-41ca-bcf4-66a0f148a118.png";
 const DARK_BG  = "https://cdn.discordapp.com/attachments/979640570794369064/1516020770789134356/c619d388-aaa6-40c1-a8c2-9b34af25d6d9.png?ex=6a311fde&is=6a2fce5e&hm=9e6a502d3808b8a136968690f18f94daf703504ac2ef582fedf249f06f8890a1&";
 
@@ -61,7 +63,7 @@ const HeroSection = ({ onLoaded, loading }: HeroSectionProps) => {
   // Fix: add [] so it only runs once
   useEffect(() => {
     axios
-      .get('/api/v1/daily-shloka')
+      .get(`${BACKEND_URL}/api/v1/daily-shloka`)
       .then((res) => setDailyShloka(res.data))
       .catch(console.error);
   }, []);

@@ -17,6 +17,7 @@ interface Message {
   timestamp: Date;
 }
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http"//localhost:3000';
 const SUGGESTED_QUESTIONS = [
   'What is the main teaching of Bhagavad Gita?',
   'What does Krishna say about duty (dharma)?',
@@ -89,7 +90,7 @@ const AIChatbot = () => {
     }, 1000);
 
     try {
-      const response = await axios.post('/api/v1/chatbot', { question: trimmed });
+      const response = await axios.post(`${BACKEND_URL}/api/v1/chatbot`, { question: trimmed });
       const content =
         response.data.message ??
         (typeof response.data === 'string' ? response.data : null) ??
