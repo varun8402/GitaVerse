@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
-body {
+html, body {
     margin: 0;
     padding: 0;
+    overscroll-behavior: none;
+}
+
+body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -58,3 +62,34 @@ body {
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff !important;
+}
+.swiper-transition {
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  }
+}
+
+.swiper-slide-active{
+  transition: width 1s ease-in-out;
+  transition-duration:5s;
+}
+.swiper {
+  padding-bottom: 40px !important; 
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+:root {
+  --swiper-pagination-color: #facc15; /* Active dot color */
+  --swiper-pagination-bullet-inactive-color: #999999; /* Inactive dot color */
+  --swiper-pagination-bullet-inactive-opacity: 0.5; /* Inactive dot opacity */
+}
+
+

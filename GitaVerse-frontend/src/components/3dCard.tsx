@@ -5,7 +5,7 @@ import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 export function ThreeDCardDemo({link}:{link?:string}) {
   return (
     <CardContainer className="inter-var">
-      <CardBody className=" relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-white dark:border-gray-400 border-black w-auto sm:w-[30rem] h-auto rounded-xl p-4 border  ">
+      <CardBody className=" relative group/card  hover:shadow-2xl hover:shadow-yellow-500/[0.1] dark:border-zinc-600 w-auto sm:w-[30rem] h-auto rounded-xl p-4 border border-gray-300  ">
         
         <CardItem
           translateZ="100"
@@ -26,7 +26,7 @@ export function ThreeDCardDemo({link}:{link?:string}) {
             translateZ={20}
             translateX={-20}
             as="button"
-            className="px-4 py-2 rounded-xl text-xs font-normal text-black"
+            className="px-4 py-2 rounded-xl text-xs font-normal text-black dark:text-white"
           >
            Read now →
           </CardItem>
