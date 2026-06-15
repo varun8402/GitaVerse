@@ -8,7 +8,7 @@ app.use(express.json());
 app.use("",routes);
 
 app.get("/", (req:Request, res:Response)=>{
-    res.send("Hello world");
+    res.send("Gita Verse Backend is Running");
 })
 
 app.listen(port, () =>{
