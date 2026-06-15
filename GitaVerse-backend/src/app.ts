@@ -10,14 +10,14 @@ const cors = require("cors");
 
 
 app.use(express.json());
-app.use("",routes);
-
 
 const corsOptions = {
   origin: process.env.FRONTEND_URL,
+  optionsSuccessStatus: 200
 };
-
 app.use(cors(corsOptions))
+
+app.use("",routes);
 
 app.get("/", (req:Request, res:Response)=>{
     res.send("Gita Verse Backend is Running");
