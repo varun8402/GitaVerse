@@ -137,7 +137,7 @@ const BrowseGita = () => {
         >
           {gitaChapterImages.map((link, index) => (
             <SwiperSlide key={index} className="h-[500px]">
-              <ThreeDCardDemo link={link} />
+              <ThreeDCardDemo link={link} chapNumber={index+1}/>
             </SwiperSlide>
           ))}
         </Swiper>
