@@ -1,6 +1,6 @@
 import { getChapterAndVerse, relevantDailyShlokaIds } from "../utils";
 
-const gita = require("../public/gita_english.json");
+const gita = require("../../public/gita_english.json");
 export const shloka = {
   getDailyShloka: () => {
     try {

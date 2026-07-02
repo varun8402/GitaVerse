@@ -1,12 +1,9 @@
-import OpenAI from 'openai';
+import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import { getRelevantVerses } from './embeddingService';
 dotenv.config();
 
-const openai = new OpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.API_KEY,
-});
+const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
 const chatBotService = {
   getChatBot: async (question: string) => {
@@ -34,20 +31,21 @@ Keep responses:
 - Simple questions: under 50 words
 - Spiritual questions: under 120 words
 
-Do not use Markdown formatting like ** for bold. Instead, wrap bold text in <strong> tags, and use <em> for italics.
+- Do not use Markdown formatting like ** for bold. Instead, wrap bold text in <strong> tags, and use <em> for italics
+- Bold the name of any GitaVerse, concept, virtue, or Gita term (like Karma, Dharma, Atman, Yoga) whenever it appears. And Try to add these bold texts oftenly in your responses.
 
 Relevant Gita verses for this question:
 ${relevantVerses}`;
 
-      const completion = await openai.chat.completions.create({
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: question },
-        ],
-        model: 'google/gemma-4-31b-it:free',
+      const response = await genAI.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: question,
+        config: {
+          systemInstruction: systemPrompt,
+        },
       });
 
-      const ai_response = completion?.choices[0]?.message.content;
+      const ai_response = response.text;
       return { message: ai_response };
     } catch (e) {
       console.log(e);
