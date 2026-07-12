@@ -1,5 +1,5 @@
 # GitaVerse
-
+![image](https://res.cloudinary.com/dwdsw96fy/image/upload/v1783854775/Screenshot_2026-07-12_163603_etdb14.png)
 A full-stack web app for exploring the **Bhagavad Gita** — browse all 18 chapters and 700+ verses, receive a daily shloka, reveal a random verse, and get AI-powered guidance grounded in the Gita's teachings.
 
 ---
